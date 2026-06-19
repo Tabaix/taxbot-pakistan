@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/44-llao5jkbmx.js","/_next/static/chunks/18sotvvmcs59d.js"],""]
+3:I[97367,["/_next/static/chunks/44-llao5jkbmx.js","/_next/static/chunks/18sotvvmcs59d.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"children":[["$","h1",null,{"children":"Tax Guides"}],["$","p",null,{"children":"Your comprehensive resource for understanding taxes in Pakistan."}],["$","ul",null,{"children":[["$","li",null,{"children":[["$","$L2",null,{"href":"/guide/first-time","children":"First-Time Filer Guide"}],["$","p",null,{"children":"New to filing taxes? Start here."}]]}],["$","li",null,{"children":[["$","$L2",null,{"href":"/guide/overseas","children":"Overseas Pakistani Guide"}],["$","p",null,{"children":"Living abroad? Understand your tax obligations."}]]}],["$","li",null,{"children":[["$","$L2",null,{"href":"/guide/notice","children":"FBR Notice Guide"}],["$","p",null,{"children":"Received a notice from the FBR? Here's what to do."}]]}]]}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"R0jwIRPcR64jRrMP9_wJ9"}
+5:null

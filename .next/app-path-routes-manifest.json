@@ -1,0 +1,12 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/chat/route": "/api/chat",
+  "/calculator/page": "/calculator",
+  "/chat/page": "/chat",
+  "/guide/first-time/page": "/guide/first-time",
+  "/guide/notice/page": "/guide/notice",
+  "/guide/overseas/page": "/guide/overseas",
+  "/guide/page": "/guide",
+  "/page": "/"
+}
