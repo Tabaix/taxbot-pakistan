@@ -1,16 +1,5 @@
 {
   "headers": {
-    "x-nextjs-stale-time": "300",
-    "x-nextjs-prerender": "1",
     "x-next-cache-tags": "_N_T_/layout,_N_T_/guide/layout,_N_T_/guide/overseas/layout,_N_T_/guide/overseas/page,_N_T_/guide/overseas"
-  },
-  "segmentPaths": [
-    "/_tree",
-    "/_full",
-    "/guide/overseas/__PAGE__",
-    "/guide/overseas",
-    "/guide",
-    "/_index",
-    "/_head"
-  ]
+  }
 }

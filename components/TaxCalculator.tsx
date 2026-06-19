@@ -6,7 +6,9 @@ import type { TaxpayerType, TaxYear } from '../lib/slabs';
 import WHTFinder from './WHTFinder';
 import TaxOptimizer from './TaxOptimizer';
 import CapitalGainsAdvisor from './CapitalGainsAdvisor';
-import PDFDownload from './PDFDownload';
+import dynamic from 'next/dynamic';
+
+const PDFDownload = dynamic(() => import('./PDFDownload'), { ssr: false });
 
 const initialInput: TaxInput = {
   taxpayerType: 'salaried',
