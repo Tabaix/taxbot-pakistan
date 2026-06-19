@@ -1,25 +1,34 @@
-import { Anthropic } from '@anthropic-ai/sdk';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import { NextRequest, NextResponse } from 'next/server';
 import { TAXBOT_SYSTEM_PROMPT } from '../../../lib/prompts';
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
 export async function POST(req: NextRequest) {
   const { messages } = await req.json();
 
   try {
-    const response = await anthropic.messages.create({
-      model: 'claude-3-5-sonnet-20240620',
-      max_tokens: 1024,
-      system: TAXBOT_SYSTEM_PROMPT,
-      messages: messages,
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-1.5-flash',
+      systemInstruction: TAXBOT_SYSTEM_PROMPT,
     });
 
-    return NextResponse.json({ content: response.content[0].type === 'text' ? response.content[0].text : '' });
+    // Convert our message format to Gemini's format
+    // Gemini uses 'user' and 'model' (not 'assistant')
+    const history = messages.slice(0, -1).map((m: { role: string; content: string }) => ({
+      role: m.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: m.content }],
+    }));
+
+    const lastMessage = messages[messages.length - 1];
+
+    const chat = model.startChat({ history });
+    const result = await chat.sendMessage(lastMessage.content);
+    const text = result.response.text();
+
+    return NextResponse.json({ content: text });
   } catch (error) {
-    console.error('Error from Anthropic API:', error);
+    console.error('Error from Gemini API:', error);
     return NextResponse.json({ error: 'Something went wrong' }, { status: 500 });
   }
 }
